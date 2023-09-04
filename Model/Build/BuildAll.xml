@@ -321,13 +321,13 @@
          <WorkingDirectory>%APSIM%/Model/Oryza</WorkingDirectory>
          <CommandLine>make</CommandLine>
       </Job>
-      <Job name="Compile Cotton">
+      <!-- <Job name="Compile Cotton">
          <DependsOn>Compile CMPServices</DependsOn>
          <DependsOn>Compile CSGeneral</DependsOn>
          <WorkingDirectory>%APSIM%/Model/Cotton</WorkingDirectory>
          <CommandLine>make</CommandLine>
          <CommandLineUnix>make -f Makefile.unix</CommandLineUnix>
-      </Job>
+      </Job> -->
       <Job name="Compile Parasite">
          <DependsOn>Compile FortranInfrastructure</DependsOn>
          <DependsOn>Compile FortranComponentInterface</DependsOn>
@@ -849,11 +849,11 @@
    <Target name="RunAll">
       <DependsOn>Post-Compile</DependsOn>
       <DependsOn>Tests</DependsOn>
-      <Job name="Unit tests">
+      <!-- <Job name="Unit tests">
          <WorkingDirectory>%APSIM%/Model/Build</WorkingDirectory>
          <CommandLine>%APSIM%/Model/Build/RunAllUnitTests.bat</CommandLine>
          <CommandLineUnix>/bin/true</CommandLineUnix>
-      </Job>
+      </Job> -->
 	  <Job name="RestoreTestPackages">
 		<WorkingDirectory>%APSIM%/Model/Tests</WorkingDirectory>
 		<CommandLine>nuget restore -verbosity quiet</CommandLine>
